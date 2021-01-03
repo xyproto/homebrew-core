@@ -20,7 +20,7 @@ class Algernon < Formula
     sha256 "b78c41a051aac0d969b8d7b49507a11e3e1b69990efe22aa88f9d5a5d544eb46" => :high_sierra
   end
 
-  depends_on "go@1.14" => :build
+  depends_on "go" => :build
 
   def install
     system "go", "build", "-trimpath", "-mod=vendor", "-o", bin/"algernon"
