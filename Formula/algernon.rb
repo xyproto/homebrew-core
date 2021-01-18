@@ -22,10 +22,9 @@ class Algernon < Formula
   depends_on "go" => :build
 
   def install
-    system "go", "build", "-trimpath", "-mod=vendor", "-o", bin/"algernon"
+    system "go", "build", *std_go_args, "-mod=vendor"
 
     bin.install "desktop/mdview"
-    prefix.install_metafiles
   end
 
   test do
